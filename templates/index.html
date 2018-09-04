@@ -28,7 +28,13 @@
 {% endblock header %}
 
 {% block content %}
-    {% if DEFAULT_PAGINATION %}    
+    <div class="archive-container">
+        <div class="container content archive">
+          <dt>{{ articles_page.object_list[articles_page.object_list.__len__()-1].content }}</dt>
+        </div>
+    </div>
+
+    {% if DEFAULT_PAGINATION %}
     <div class="archive-container">
         <div class="container content archive">
             <h2><a href="{{ SITEURL }}/{{ articles_page.url }}">{{ NEST_INDEX_CONTENT_TITLE }} {% if articles_page.has_previous() %}<small>- page {{ articles_page.number }}</small>{% endif %}</a></h2>
